@@ -30,7 +30,6 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   text-align: center;
-  margin-top: calc(4rem + var(--nav-height));
 }
 
 .page-container {
@@ -38,10 +37,20 @@ body {
   margin: 0 auto;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 /*==== Buttons ========================*/
 
 button {
   border-radius: 9999px;
+  border: none;
+  background-color: transparent;
 }
 
 .primary-button {
@@ -88,15 +97,47 @@ nav {
   width: 100vw;
 }
 
-.nav-wrapper a svg:nth-child(1) path {
+.scroll a svg:nth-child(1) path {
   fill: var(--clr-secondary-white);
   stroke: none;
 }
 
-.nav-wrapper svg:nth-child(2) path {
+.scroll button.open-menu svg path {
   stroke: var(--clr-secondary-white);
 }
 
+/*==== MENU EXPANDED ========================*/
+.menu,
+.close-menu,
+body.menu-expanded .open-menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+  opacity: 1;
+  visibility: visible;  
+}
+
+body.menu-expanded .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--clr-primary);
+
+  width: 100vw;
+  height: 100vh;
+
+}
+
+body.menu-expanded {
+  overflow: hidden;
+}
+
+body.menu-expanded nav {
+  position: relative;
+}
 
 /*==== 1st SECTION ========================*/
 
@@ -110,7 +151,7 @@ nav {
 
 .above-the-fold::before {
   content: "";
-  width: 100vw;
+  width: 100%;
   height: calc(108rem + var(--nav-height));
   background-color: var(--clr-primary-clear);
   display: block;
@@ -184,3 +225,6 @@ p {
 .box p {
   color: var(--clr-primary);
 }
+
+/*==== 2st SECTION ========================*/
+
