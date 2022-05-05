@@ -306,7 +306,7 @@ p {
   border-radius: 0.6rem;
   border: 1px solid var(--clr-primary-clear);
   min-width: calc(50vw - 2.4rem);
-  max-width: 80vw;
+  max-width: 100vw;
   height: 48rem;
 }
 
