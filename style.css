@@ -35,10 +35,8 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   text-align: center;
-}
+  background-color: var(--clr-primary-light);
 
-main {
-  margin-top: calc(4rem + var(--nav-height));
 }
 
 .page-container {
@@ -67,6 +65,15 @@ p {
   line-height: 2.4rem;
   font-weight: 400;
   color: var(--clr-secondary-texting);
+}
+
+
+main {
+  margin-top: calc(4rem + var(--nav-height));
+}
+
+section {
+  padding-bottom: 10rem;
 }
 /*==== Buttons ========================*/
 
@@ -339,21 +346,13 @@ h1 {
 
 /*==== 2nd SECTION ========================*/
 
-.services {
-  background-color: var(--clr-primary-light);
-}
-
-.services .label {
-  padding-top: 20rem;
-}
-
 .services h2 {
   margin-bottom: 6rem;
   padding: 0 2.4rem;
 }
 
 .card-wrapper {
-  padding: 0 2.4rem 10rem;
+  padding: 0 2.4rem;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
@@ -383,12 +382,11 @@ h1 {
 
 .about-us {
   background-color: var(--clr-primary-beige);
-  padding: 0 2.4rem;
+  padding: 10rem 2.4rem;
 }
 
 .about-us .label {
   text-align: start;
-  padding-top: 10rem;
 }
 
 .about-us h2 {
@@ -398,4 +396,56 @@ h1 {
 
 .about-us p {
   text-align: start;
+  margin-bottom: 6rem;
+}
+
+/*==== 4th SECTION ========================*/
+
+.contact-us {
+  padding: 0 2.4rem 10rem;
+}
+.contact-us h2 {
+  padding-top: 10rem;
+  text-align: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem 0;
+  gap: 1.6rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.contact-us button {
+  float: left;
+  margin-bottom: 6rem;
+}
+/*==== FOOTER ========================*/
+
+footer {
+  background-color: var(--clr-primary);
+  text-align: start;
+  padding: 6rem 2.4rem;
+}
+
+footer div svg {
+  margin-bottom: 2.4rem;
+}
+
+footer div div > p {
+  margin-bottom: 1.2rem;
+  color: var(--clr-secondary-white);
+}
+
+footer .social-links {
+  margin-top: 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
 }
