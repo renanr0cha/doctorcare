@@ -29,6 +29,7 @@ html,
 body {
   width: 100vw;
   height: 100vh;
+  scroll-behavior: smooth;
 }
 body {
   font-family: 'DM Sans', sans-serif;
@@ -67,9 +68,13 @@ p {
   color: var(--clr-secondary-texting);
 }
 
+button {
+  cursor: pointer;
+}
+
 
 main {
-  margin-top: calc(4rem + var(--nav-height));
+  padding-top: calc(4rem + var(--nav-height));
 }
 
 section {
@@ -172,7 +177,7 @@ body.menu-expanded .open-menu {
 }
 
 body.menu-expanded div.page-container > :not(nav) {
-  display: none;
+  visibility: hidden;
 }
 
 body.menu-expanded .menu,
@@ -181,6 +186,10 @@ body.menu-expanded .close-menu {
   visibility: visible;
   display: block;
 
+}
+
+.menu {
+  transform: translateX(100%);
 }
 
 body.menu-expanded .menu {
@@ -192,9 +201,11 @@ body.menu-expanded .menu {
   width: 100vw;
   height: 100vh;
 
-  display: block;
   padding: 0;
   margin: o auto;
+
+  transition: transform 700ms;
+  transform: translateX(0);
 }
 
 body.menu-expanded ul {
@@ -255,7 +266,7 @@ body.menu-expanded button svg path {
 
 /*==== 1st SECTION ========================*/
 
-.above-the-fold {
+#above-the-fold {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -264,7 +275,7 @@ body.menu-expanded button svg path {
   padding: 0 2.4rem;
 }
 
-.above-the-fold::before {
+#above-the-fold::before {
   content: "";
   width: 100vw;
   height: calc(108rem + var(--nav-height));
@@ -278,16 +289,16 @@ body.menu-expanded button svg path {
   z-index: -1;
 }
 
-.above-the-fold img {
+#above-the-fold img {
   margin: 6rem auto 0;
   width: 70vw;
   max-width: 40rem;
   object-position: 0 +20px;
 }
 
-.above-the-fold .label,
-.services .label,
-.about-us .label {
+#above-the-fold .label,
+#services .label,
+#about-us .label {
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.08rem;
@@ -343,11 +354,11 @@ h1 {
 
 /*==== 2nd SECTION ========================*/
 
-.services {
+#services {
   padding: 10rem 2.4rem;
 }
 
-.services h2 {
+#services h2 {
   margin-bottom: 6rem;
 }
 
@@ -379,31 +390,31 @@ h1 {
 
 /*==== 3rd SECTION ========================*/
 
-.about-us {
+#about-us {
   background-color: var(--clr-primary-beige);
   padding: 10rem 2.4rem;
 }
 
-.about-us .label {
+#about-us .label {
   text-align: start;
 }
 
-.about-us h2 {
+#about-us h2 {
   text-align: start;
   margin-bottom: 2.4rem;
 }
 
-.about-us p {
+#about-us p {
   text-align: start;
   margin-bottom: 6rem;
 }
 
 /*==== 4th SECTION ========================*/
 
-.contact-us {
+#contact-us {
   padding: 10rem 2.4rem;
 }
-.contact-us h2 {
+#contact-us h2 {
   text-align: start;
 }
 
@@ -420,7 +431,7 @@ h1 {
   gap: 0.8rem;
 }
 
-.contact-us button {
+#contact-us button {
   float: left;
   margin-bottom: 6rem;
 }

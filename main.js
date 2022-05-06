@@ -14,10 +14,7 @@ function openMenu() {
 }
 
 function closeMenu() {
-  const buttonCloseMenu = document.querySelector(".close-menu")
-  buttonCloseMenu.addEventListener('click', function() {
     document.body.classList.remove('menu-expanded')
-  })
 }
+
 openMenu()
-closeMenu()
