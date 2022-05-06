@@ -261,6 +261,7 @@ body.menu-expanded button svg path {
   align-items: center;
   justify-content: center;
   padding-top: var(4rem + var(--nav-height));
+  padding: 0 2.4rem;
 }
 
 .above-the-fold::before {
@@ -279,7 +280,8 @@ body.menu-expanded button svg path {
 
 .above-the-fold img {
   margin: 6rem auto 0;
-  width: 26.4rem;
+  width: 70vw;
+  max-width: 40rem;
   object-position: 0 +20px;
 }
 
@@ -300,11 +302,6 @@ h1 {
   line-height: 4.4rem;
   color: var(--clr-secondary-heading);
   margin-bottom: 2.4rem;
-  padding: 0 2.4rem;
-}
-
-.above-the-fold p {
-  padding: 0 2.4rem;
 }
 
 .p-hero {
@@ -324,7 +321,7 @@ h1 {
   border-radius: 0.6rem;
   border: 1px solid var(--clr-primary-clear);
   min-width: calc(80vw - 2.4rem);
-  max-width: calc(100vw - 2.4rem);
+  max-width: calc(100vw - 4.8rem);
 }
 
 .box {
@@ -346,13 +343,15 @@ h1 {
 
 /*==== 2nd SECTION ========================*/
 
+.services {
+  padding: 10rem 2.4rem;
+}
+
 .services h2 {
   margin-bottom: 6rem;
-  padding: 0 2.4rem;
 }
 
 .card-wrapper {
-  padding: 0 2.4rem;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
@@ -402,10 +401,9 @@ h1 {
 /*==== 4th SECTION ========================*/
 
 .contact-us {
-  padding: 0 2.4rem 10rem;
+  padding: 10rem 2.4rem;
 }
 .contact-us h2 {
-  padding-top: 10rem;
   text-align: start;
 }
 
