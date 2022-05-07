@@ -1,10 +1,25 @@
+window.addEventListener('scroll', onScroll)
+
 function onScroll(){
+  showBackToTopOnScroll()
+  showNavOnScroll()
+}
+
+function showNavOnScroll() {
   if (scrollY > 0) {
     navigation.classList.add('scroll')
-    stick.style.visibility = "visible"
+    
   } else {
     navigation.classList.remove('scroll')
-    stick.style.visibility = "hidden"
+  }
+}
+
+
+function showBackToTopOnScroll() {
+  if (scrollY > 350) {
+    stick.classList.add('show')
+  } else {
+    stick.classList.remove('show')
   }
 }
 
@@ -20,6 +35,7 @@ function closeMenu() {
 }
 
 openMenu()
+onScroll()
 
 ScrollReveal({
   origin: 'top',

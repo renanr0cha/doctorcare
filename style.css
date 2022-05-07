@@ -13,11 +13,12 @@ img {
 
 :root {
   font-size: 62.5%;
-  --clr-primary: hsl(170, 100%, 26%);
+  --hue: 170;
+  --clr-primary: hsl(var(--hue), 100%, 26%);
   --clr-primary-clear: #DCE9E2;
   --clr-primary-light: #F7F9F9;
   --clr-primary-beige: #FFFAF1;
-  --clr-primary-dark: #00453A;
+  --clr-primary-dark: hsl(var(--hue), 100%, 14%);
 
   --clr-secondary-heading: #212529;
   --clr-secondary-texting: #495057;
@@ -53,6 +54,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(white);
 }
 
 
@@ -87,6 +89,7 @@ section {
 button {
   border-radius: 9999px;
   border: none;
+  display: flex;
   background-color: transparent;
 
 }
@@ -101,11 +104,17 @@ button {
   font-size: 1.4rem;
   font-weight: 700;
   width: fit-content;
+
 }
 
-button.primary-button:hover {
+/* Only got transition to work on buttons with id: Research Why! */
+button.primary-button {
+  transition: 150ms;
+
+}
+
+.primary-button:hover {
   background-color: var(--clr-primary-dark);
-  transition: ease-in 200ms;
 
 }
 
@@ -125,11 +134,15 @@ button.primary-button:hover {
   color: var(--clr-primary);
   background-color: var(--clr-secondary-white);
   width: fit-content;
+  border-radius: 9999px;
+  transition: 150ms;
 }
 
-.secondary-button a {
-  color: var(--clr-primary);
 
+.secondary-button:hover {
+  background-color: var(--clr-primary);
+  outline: 2px solid white;
+  color: var(--clr-secondary-white);
 }
 
 /*==== NAVIGATION ========================*/
@@ -231,7 +244,6 @@ body.menu-expanded li a {
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 3.1rem;
-
 }
 
 body.menu-expanded .social-links {
@@ -457,8 +469,21 @@ footer .social-links {
   gap: 3.2rem;
 }
 
+/*==== BACK TO TOP BUTTON ========================*/
+
 #stick {
   position: fixed;
-  bottom: 2rem;
+  bottom: 1rem;
   right: 2rem;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: 200ms;
+}
+
+#stick.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
