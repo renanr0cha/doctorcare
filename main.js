@@ -4,25 +4,43 @@ function onScroll(){
   showBackToTopOnScroll()
   showNavOnScroll()
   activateMenuAtCurrentSection(home)
+  activateMenuAtCurrentSection(services)
+  activateMenuAtCurrentSection(about)
+  activateMenuAtCurrentSection(contact)
 }
 
 function activateMenuAtCurrentSection(section) {
-  const targetLine = (scrollY + innerHeight) / 2
+  const targetLine = scrollY + innerHeight / 2
+  console.log(targetLine)
 
   //verificar se a sessão passou da linha, quais dados preciso?
   const sectionTop = section.offsetTop
   const sectionHeight = section.offsetHeight
+  console.log(sectionHeight)
   const sectionEndsAt = sectionTop + sectionHeight
+
+  console.log(sectionEndsAt)
 
   const sectionTopReachedOrPassedTargetLine = targetLine >= sectionTop
 
-  const sectionBottomReachedOrPassedTargetLine = targetLine >= sectionTop
-
-  const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
-
-  const sectionBoundaries = sectionBottomReachedOrPassedTargetLine && sectionEndPassedTargetLine
-
   console.log(sectionTopReachedOrPassedTargetLine)
+  
+  
+  const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
+  console.log(sectionEndPassedTargetLine)
+  
+  const sectionBoundaries = sectionTopReachedOrPassedTargetLine && !sectionEndPassedTargetLine
+
+  console.log( sectionBoundaries)
+  
+  const sectionId = section.getAttribute('id')
+
+  const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
+
+  menuElement.classList.remove('active')
+  if (sectionBoundaries) {
+    menuElement.classList.add('active')
+  }
 }
 
 function showNavOnScroll() {

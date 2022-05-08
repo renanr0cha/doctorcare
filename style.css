@@ -600,6 +600,7 @@ footer .social-links {
     
   }
 
+  nav#navigation .menu a.secondary-button.active,
   nav#navigation.scroll .menu .secondary-button:hover {
     background-color: var(--clr-secondary-white);
     outline: none;
