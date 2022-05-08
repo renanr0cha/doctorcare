@@ -3,6 +3,26 @@ window.addEventListener('scroll', onScroll)
 function onScroll(){
   showBackToTopOnScroll()
   showNavOnScroll()
+  activateMenuAtCurrentSection(home)
+}
+
+function activateMenuAtCurrentSection(section) {
+  const targetLine = (scrollY + innerHeight) / 2
+
+  //verificar se a sessão passou da linha, quais dados preciso?
+  const sectionTop = section.offsetTop
+  const sectionHeight = section.offsetHeight
+  const sectionEndsAt = sectionTop + sectionHeight
+
+  const sectionTopReachedOrPassedTargetLine = targetLine >= sectionTop
+
+  const sectionBottomReachedOrPassedTargetLine = targetLine >= sectionTop
+
+  const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
+
+  const sectionBoundaries = sectionBottomReachedOrPassedTargetLine && sectionEndPassedTargetLine
+
+  console.log(sectionTopReachedOrPassedTargetLine)
 }
 
 function showNavOnScroll() {
@@ -13,7 +33,6 @@ function showNavOnScroll() {
     navigation.classList.remove('scroll')
   }
 }
-
 
 function showBackToTopOnScroll() {
   if (scrollY > 350) {
@@ -37,27 +56,31 @@ function closeMenu() {
 openMenu()
 onScroll()
 
+
+
+
 ScrollReveal({
   origin: 'top',
   distance: '30px',
   duration: 700,
   delay: 200
 }).reveal(`
-  #above-the-fold div,
-  #above-the-fold button,
-  #above-the-fold img,
+  #home,
+  #home div,
+  #home button,
+  #home img,
   #services,
   #services .label,
   #services .h2,
   #services .card,
-  #about-us,
-  #about-us .label,
-  #about-us h2,
-  #about-us p,
-  #about-us img,
-  #contact-us,
-  #contact-us h2,
-  #contact-us .contact-info,
-  #contact-us button,
-  #contact-us img
+  #about,
+  #about .label,
+  #about h2,
+  #about p,
+  #about img,
+  #contact,
+  #contact h2,
+  #contact .contact-info,
+  #contact button,
+  #contact img
 `);
